@@ -7,6 +7,7 @@ This markdown file will contain concise cheatsheets for each DevOps topic you re
 ## Cheatsheet Index
 
 - [Git Fundamentals](#git-fundamentals) ✅ **MASTERED**
+- [Linux/Unix Commands](#linuxunix-commands) ✅ **MASTERED**
 
 ---
 
@@ -79,12 +80,123 @@ You've mastered all fundamental Git concepts including local workflows, branchin
 ## 🚀 Next Topic Preparation
 
 Ready to add your next DevOps topic here! Common next topics in DevOps learning paths:
-- Linux/Unix Command Line
 - Docker & Containerization
 - CI/CD Pipelines
 - Infrastructure as Code
 - Monitoring & Logging
 - Cloud Platforms (AWS/Azure/GCP)
+
+---
+
+## Linux/Unix Commands ✅ **MASTERED**
+
+### Essential Daily Commands
+```bash
+# System Information
+uname -a                    # System information
+free -h                     # Memory usage
+df -h                       # Disk space
+lscpu                       # CPU information
+
+# File Operations
+ls -la                      # List files detailed
+cp -r source dest           # Copy directories
+mv old_name new_name        # Move/rename
+rm -rf directory            # Remove recursively
+chmod 755 file              # Set permissions
+
+# Process Management
+ps aux                      # Show all processes
+top                         # Real-time process monitor
+kill -9 PID                 # Force kill process
+jobs                        # List active jobs
+
+# Network Commands
+ping -c 4 host              # Test connectivity
+curl -I URL                 # Get HTTP headers
+netstat -tuln               # Show listening ports
+wget URL                    # Download files
+
+# Text Processing
+grep -r "pattern" dir       # Recursive search
+sed 's/old/new/g' file      # Find and replace
+awk '{print $1}' file       # Print first column
+tail -f logfile             # Follow log file
+```
+
+### File Permissions Quick Reference
+```bash
+# Permission Numbers
+chmod 755 file              # rwxr-xr-x (owner: all, group/others: read+execute)
+chmod 644 file              # rw-r--r-- (owner: read+write, others: read)
+chmod 600 file              # rw------- (owner: read+write, others: none)
+
+# Permission Letters
+chmod u+x file              # Add execute for user
+chmod g-w file              # Remove write for group
+chmod o-r file              # Remove read for others
+```
+
+### Package Management
+```bash
+# APT (Debian/Ubuntu)
+sudo apt update             # Update package list
+sudo apt install package   # Install package
+sudo apt remove package    # Remove package
+
+# YUM/DNF (RHEL/Fedora)
+sudo yum install package    # Install package (RHEL/CentOS)
+sudo dnf install package    # Install package (Fedora)
+```
+
+### System Monitoring
+```bash
+# Resource Monitoring
+htop                        # Enhanced process viewer
+iostat 5                    # I/O stats every 5 seconds
+du -sh directory            # Directory size
+uptime                      # System uptime and load
+
+# Log Monitoring
+journalctl -f               # Follow systemd logs
+tail -f /var/log/syslog     # Follow system log
+dmesg                       # Kernel messages
+```
+
+### Archive & Compression
+```bash
+# TAR operations
+tar -czvf archive.tar.gz dir    # Create compressed archive
+tar -xzvf archive.tar.gz        # Extract compressed archive
+tar -tf archive.tar             # List archive contents
+
+# ZIP operations
+zip -r archive.zip directory    # Create zip archive
+unzip archive.zip               # Extract zip archive
+```
+
+### Network Troubleshooting
+```bash
+# Connectivity Testing
+ping google.com             # Basic connectivity test
+traceroute destination      # Trace network path
+nslookup domain.com         # DNS lookup
+dig domain.com              # Detailed DNS info
+
+# Port Testing
+nc -zv host port            # Test port connectivity
+telnet host port            # Manual port test
+```
+
+### Quick Safety Reminders
+- **Always test destructive commands**: Use `ls` before `rm`
+- **Use `-i` for confirmation**: `rm -i filename`
+- **Don't run everything as root**: Use `sudo` when needed
+- **Regular backups**: Before major changes
+- **Check man pages**: `man command` for help
+
+### 🎯 **Learning Status: COMPLETE**
+You've mastered essential Linux/Unix commands for DevOps operations including system administration, file management, process control, network troubleshooting, and security practices. Ready for production environments!
 
 ---
 

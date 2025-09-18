@@ -1,12 +1,24 @@
 <div align="center">
 
-# DevOps Oneshot — Learning Journey 🚀
+# DevOps Onesho## 📦 What's Inside
+- `revising_git/` — Git Ess## 🌟 Featured Cheatsheets
+
+### Git Essentials (Mastered ✅)tials Cheat Sheet → see [`revising_git/git.md`](revising_git/git.md)
+- `revising_linux/` — Linux/Unix Commands Reference → see [`revising_linux/linux_commands.md`](revising_linux/linux_commands.md)
+- `.devops_journey/` — Learning artifacts:
+  - [`cheatsheets.md`](.devops_journey/cheatsheets.md) — consolidated topic cheatsheets
+  - [`journey_summary.md`](.devops_journey/journey_summary.md) — high-level progress
+  - [`progress_log.md`](.devops_journey/progress_log.md) — day-by-day notes
+- `.github/prompts/` — Assistant prompt specs:
+  - [`devops_assistant.prompt.md`](.github/prompts/devops_assistant.prompt.md)
+  - [`cheetsheet.prompt.md`](.github/prompts/cheetsheet.prompt.md)
+  - [`progress.prompt.md`](.github/prompts/progress.prompt.md)ng Journey 🚀
 
 Comprehensive, beautifully crafted notes and cheatsheets from a focused DevOps mastery sprint.
 
 <a href="#-progress--status"><img alt="Status" src="https://img.shields.io/badge/status-active-brightgreen?style=for-the-badge"></a>
-<a href="#-whats-inside"><img alt="Topics" src="https://img.shields.io/badge/topics-1_mastered-blue?style=for-the-badge"></a>
-<a href="#-progress--status"><img alt="Last Updated" src="https://img.shields.io/badge/last_update-2025--09--17-purple?style=for-the-badge"></a>
+<a href="#-whats-inside"><img alt="Topics" src="https://img.shields.io/badge/topics-2_mastered-blue?style=for-the-badge"></a>
+<a href="#-progress--status"><img alt="Last Updated" src="https://img.shields.io/badge/last_update-2025--09--18-purple?style=for-the-badge"></a>
 <a href="#-how-i-work"><img alt="Conventions" src="https://img.shields.io/badge/commits-conventional-ff69b4?style=for-the-badge"></a>
 
 </div>
@@ -52,7 +64,7 @@ A curated repository to document and reinforce DevOps concepts through concise c
 ## 🚀 Getting Started
 Use this repo as a fast reference and structured learning log.
 
-- Browse cheatsheets: start with [`revising_git/git.md`](revising_git/git.md)
+- Browse cheatsheets: start with [`revising_git/git.md`](revising_git/git.md) or [`revising_linux/linux_commands.md`](revising_linux/linux_commands.md)
 - Keep progress flowing in [`.devops_journey/progress_log.md`](.devops_journey/progress_log.md)
 - Summarize milestones in [`.devops_journey/journey_summary.md`](.devops_journey/journey_summary.md)
 
@@ -66,9 +78,11 @@ Suggest next
 
 
 ## 📈 Progress & Status
-- Status: 🟢 Active
-- Mastered Topics: 1
-- Latest: Git Fundamentals — ✅ MASTERED (Sept 17, 2025)
+- Status: 🟢 Active Learning
+- Mastered Topics: 2
+- Currently Learning: 0
+- Latest Completed: Linux/Unix Commands — ✅ MASTERED (Sept 18, 2025)
+- Previous: Git Fundamentals — ✅ MASTERED (Sept 17, 2025)
 - Overview: see [`journey_summary.md`](.devops_journey/journey_summary.md)
 - Daily notes: see [`progress_log.md`](.devops_journey/progress_log.md)
 
@@ -97,12 +111,32 @@ git remote add origin <url>
 git push -u origin main
 ```
 
-Full reference: [`revising_git/git.md`](revising_git/git.md)
+### Linux/Unix Commands (Mastered ✅)
+```bash
+# System Information
+free -h                     # Memory usage
+df -h                       # Disk space
+ps aux                      # Running processes
+top                         # Real-time monitor
+
+# File Operations
+ls -la                      # List files detailed
+chmod 755 file              # Set permissions
+cp -r source dest           # Copy recursively
+grep -r "pattern" dir       # Search in files
+
+# Network
+ping -c 4 google.com        # Test connectivity
+curl -I URL                 # Get HTTP headers
+netstat -tuln               # Show ports
+```
+
+Full references: [`revising_git/git.md`](revising_git/git.md) | [`revising_linux/linux_commands.md`](revising_linux/linux_commands.md)
 
 
 ## 🗺️ Topics Roadmap
 - [x] Git Fundamentals
-- [ ] Linux/Unix Command Line
+- [x] Linux/Unix Command Line
 - [ ] Docker & Containerization
 - [ ] CI/CD Fundamentals
 - [ ] Infrastructure as Code (Terraform)

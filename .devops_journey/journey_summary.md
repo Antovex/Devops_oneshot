@@ -1,6 +1,8 @@
 # 🚀 DevOps Learning Journey Summary
 
-A high-level overview of your DevOps mastery progress and achievements.
+A high-level overview of your DevOps learning progress and achievements.
+
+> **How to use**: Fork this repository and update this file with your own progress. Use it to track milestones, skills developed, and plan your learning path.
 
 ---
 
@@ -11,6 +13,8 @@ A high-level overview of your DevOps mastery progress and achievements.
 |-------|---------------|----------------|-----------------|
 | **Git & Version Control** | 🏆 **EXPERT** | Sept 17, 2025 | Complete workflow mastery - ready for production teams |
 | **Linux/Unix Commands** | 🏆 **EXPERT** | Sept 18, 2025 | Command-line mastery - ready for DevOps operations |
+| **Git & Version Control** | ✅ **COMPLETE** | Sept 17, 2025 | Workflow proficiency - ready for production teams |
+| **Linux/Unix Commands** | ✅ **COMPLETE** | Sept 18, 2025 | Command-line proficiency - ready for DevOps operations |
 
 ### Currently Learning ⚡
 | Topic | Status | Date Started | Progress |
@@ -26,9 +30,9 @@ A high-level overview of your DevOps mastery progress and achievements.
 
 ---
 
-## 🎯 Mastery Milestones
+## 🎯 Study Milestones
 
-### 🏆 Git & Version Control - EXPERT LEVEL
+### ✅ Git & Version Control - COMPLETE
 - ✅ Local repository management
 - ✅ Staging and commit workflows
 - ✅ Branch management and feature workflows
@@ -39,7 +43,7 @@ A high-level overview of your DevOps mastery progress and achievements.
 
 **Ready For:** Production environments, team leadership, complex Git workflows
 
-### ⚡ Linux/Unix Commands - EXPERT LEVEL
+### ✅ Linux/Unix Commands - COMPLETE
 - ✅ System administration fundamentals
 - ✅ File operations and permissions
 - ✅ Process management

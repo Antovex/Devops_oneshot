@@ -6,12 +6,12 @@ This markdown file will contain concise cheatsheets for each DevOps topic you re
 
 ## Cheatsheet Index
 
-- [Git Fundamentals](#git-fundamentals) ✅ **MASTERED**
-- [Linux/Unix Commands](#linuxunix-commands) ✅ **MASTERED**
+- [Git Fundamentals](#git-fundamentals) ✅ **REVISED**
+- [Linux/Unix Commands](#linuxunix-commands) ✅ **REVISED**
 
 ---
 
-## Git Fundamentals ✅ **MASTERED**
+## Git Fundamentals ✅ **REVISED**
 
 ### Essential Commands
 ```bash
@@ -72,8 +72,8 @@ Examples:
 - Use descriptive branch names (`feature-login`, `fix-payment`)
 - Write commit messages that complete: "If applied, this commit will ___"
 
-### 🎯 **Mastery Status: COMPLETE**
-You've mastered all fundamental Git concepts including local workflows, branching, remote repositories, and team collaboration patterns. Ready for production use!
+### 🎯 **Study Status: COMPLETE**
+You've completed all fundamental Git concepts including local workflows, branching, remote repositories, and team collaboration patterns. Ready for production use!
 
 ---
 
@@ -88,7 +88,7 @@ Ready to add your next DevOps topic here! Common next topics in DevOps learning 
 
 ---
 
-## Linux/Unix Commands ✅ **MASTERED**
+## Linux/Unix Commands ✅ **REVISED**
 
 ### Essential Daily Commands
 ```bash
@@ -195,8 +195,8 @@ telnet host port            # Manual port test
 - **Regular backups**: Before major changes
 - **Check man pages**: `man command` for help
 
-### 🎯 **Learning Status: COMPLETE**
-You've mastered essential Linux/Unix commands for DevOps operations including system administration, file management, process control, network troubleshooting, and security practices. Ready for production environments!
+### 🎯 **Study Status: COMPLETE**
+You've completed essential Linux/Unix commands for DevOps operations including system administration, file management, process control, network troubleshooting, and security practices. Ready for production environments!
 
 ---
 

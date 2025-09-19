@@ -7,7 +7,8 @@ This markdown file will contain concise cheatsheets for each DevOps topic you re
 ## Cheatsheet Index
 
 - [Git Fundamentals](#git-fundamentals) ✅ **REVISED**
-- [Linux/Unix Commands](#linuxunix-commands) ✅ **REVISED**
+- [Linux/Unix Commands](#linuxunix-commands) ✅ **REVISED**  
+- [Docker & Containerization](#docker--containerization) ⚡ **IN PROGRESS**
 
 ---
 
@@ -197,6 +198,152 @@ telnet host port            # Manual port test
 
 ### 🎯 **Study Status: COMPLETE**
 You've completed essential Linux/Unix commands for DevOps operations including system administration, file management, process control, network troubleshooting, and security practices. Ready for production environments!
+
+---
+
+## Docker & Containerization ⚡ **IN PROGRESS**
+
+### Essential Commands
+```bash
+# Container Lifecycle (The Big 4)
+docker run -d -p 8080:80 --name myapp nginx  # Run container
+docker ps                                    # List running containers  
+docker logs myapp                           # Check container logs
+docker exec -it myapp bash                  # Jump inside container
+
+# Container Management
+docker stop myapp                           # Stop container
+docker start myapp                          # Start stopped container
+docker restart myapp                        # Restart container
+docker rm myapp                             # Remove stopped container
+docker rm -f myapp                          # Force remove running container
+```
+
+### Image Operations
+```bash
+# Working with Images
+docker images                               # List local images
+docker pull ubuntu:20.04                   # Download image
+docker build -t myapp .                     # Build from Dockerfile
+docker build -t myapp:v1.0 .               # Build with tag
+docker rmi myapp                            # Remove image
+docker rmi -f myapp                         # Force remove image
+
+# Image Information
+docker inspect myapp                        # Detailed image info
+docker history myapp                        # Show image layers
+```
+
+### Volume Management
+```bash
+# Named Volumes (Best for production data)
+docker volume create mydata                 # Create named volume
+docker volume ls                            # List volumes
+docker run -v mydata:/app/data nginx        # Use named volume
+
+# Bind Mounts (Best for development)
+docker run -v ${PWD}:/app nginx             # Mount current directory
+docker run -v /host/path:/container/path nginx  # Specific path
+
+# Volume Operations
+docker volume inspect mydata                # Volume details
+docker volume prune                         # Remove unused volumes
+```
+
+### Network Management
+```bash
+# Network Operations
+docker network create mynetwork             # Create custom network
+docker network ls                           # List networks
+docker run --network=mynetwork nginx        # Connect to network
+
+# Container Communication
+docker network connect mynetwork container  # Connect running container
+docker network disconnect mynetwork container # Disconnect container
+docker network inspect mynetwork            # Network details
+```
+
+### Docker Compose Essentials
+```bash
+# Project Management
+docker-compose up -d                        # Start all services in background
+docker-compose down                         # Stop and remove everything
+docker-compose logs -f                      # Watch all service logs
+docker-compose ps                           # List project containers
+
+# Service Management  
+docker-compose up -d --scale web=3          # Scale web service to 3 instances
+docker-compose exec web bash                # Execute command in service
+docker-compose restart web                  # Restart specific service
+```
+
+### Quick Cleanup Commands
+```bash
+# Emergency Cleanup (When things get messy)
+docker system prune                         # Clean up unused resources
+docker container prune                      # Remove stopped containers  
+docker image prune                          # Remove dangling images
+docker volume prune                         # Remove unused volumes
+
+# Nuclear Option (Clean everything)
+docker system prune -a --volumes           # Remove everything unused
+```
+
+### Dockerfile Quick Reference
+```dockerfile
+# Essential Instructions
+FROM node:16-alpine                         # Base image (like starting recipe)
+WORKDIR /app                               # Set working directory (your workspace)  
+COPY package*.json ./                      # Copy files (add ingredients)
+RUN npm install                            # Run build commands (prep work)
+COPY . .                                   # Copy application code
+EXPOSE 3000                                # Document port (which door to use)
+USER node                                  # Security (run as non-root)
+CMD ["npm", "start"]                       # Default command (what happens when started)
+```
+
+### Container Debugging
+```bash
+# Troubleshooting
+docker logs container-name                  # Check application logs
+docker inspect container-name               # Detailed container info
+docker exec -it container-name sh           # Interactive shell access
+docker port container-name                  # Check port mappings
+
+# Resource Monitoring
+docker stats                                # Real-time resource usage
+docker stats container-name                 # Specific container stats
+```
+
+### Common Use Cases
+```bash
+# Development Database
+docker run -d -p 5432:5432 -e POSTGRES_PASSWORD=dev postgres:13
+
+# Quick Web Server
+docker run -d -p 8080:80 -v ${PWD}:/usr/share/nginx/html nginx
+
+# Temporary Test Environment
+docker run --rm -it -v ${PWD}:/workspace ubuntu:20.04 bash
+```
+
+### Best Practices Reminders
+- **Use specific image tags** (not `latest`) in production
+- **Run as non-root user** for security
+- **Use named volumes** for persistent data
+- **Clean up regularly** to save disk space
+- **One process per container** principle
+- **Keep images small** with multi-stage builds
+
+### Quick Safety Tips
+- **Always check logs first**: `docker logs container-name`
+- **Test locally before production**: Use same images
+- **Backup volumes**: Before major changes
+- **Use health checks**: For production containers
+- **Monitor resources**: With `docker stats`
+
+### 🎯 **Study Status: IN PROGRESS**
+Currently learning Docker fundamentals including containerization, images, volumes, networking, and Docker Compose. Building practical experience with real-world examples and best practices.
 
 ---
 

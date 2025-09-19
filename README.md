@@ -46,7 +46,8 @@ Follow this structured path to build strong DevOps foundations:
 2. **[Linux/Unix Commands](revising_linux/linux_commands.md)** ✅ - Command-line proficiency for operations
 
 ### Phase 2: Containerization & Automation
-3. **Docker & Containerization** 📋 - Package applications consistently
+3. **[Docker & Containerization](revising_docker/docker_guide.md)** ⚡ - Package applications consistently, master images, containers, volumes, networking, and Dockerfile creation.  
+   - Deep-dive modules: [Images & Containers](revising_docker/docker_deep_dive/images_and_containers.md), [Volumes & Persistence](revising_docker/docker_deep_dive/volumes_and_persistence.md), [Networking](revising_docker/docker_deep_dive/networking.md), [Dockerfile Instructions](revising_docker/docker_deep_dive/dockerfile_instructions.md)
 4. **CI/CD Fundamentals** 📋 - Automate testing and deployment
 
 ### Phase 3: Infrastructure & Configuration
@@ -82,7 +83,12 @@ Follow this structured path to build strong DevOps foundations:
    - Practice on your system or a virtual machine
    - Try the hands-on scenarios
 
-4. **Track your progress**
+4. **Continue with Docker & Containerization**
+   - Read [`revising_docker/docker_guide.md`](revising_docker/docker_guide.md)
+   - Explore deep-dive modules for advanced topics
+   - Use the [Docker cheatsheet](.devops_journey/cheatsheets.md#docker--containerization-⚡-in-progress) for quick reference
+
+5. **Track your progress**
    - Use [`.devops_journey/progress_log.md`](.devops_journey/progress_log.md) as a template
    - Update your learning status as you progress
 
@@ -137,8 +143,15 @@ DevOps_Learning_Path/
 │   └── git.md                     # Complete Git reference
 ├── revising_linux/                # Linux/Unix Commands
 │   └── linux_commands.md         # Complete Linux reference
+├── revising_docker/               # Docker & Containerization
+│   ├── docker_guide.md           # Main Docker guide with analogies
+│   └── docker_deep_dive/         # Specialized deep-dive modules
+│       ├── images_and_containers.md    # Images, containers, optimization
+│       ├── volumes_and_persistence.md  # Data persistence strategies  
+│       ├── networking.md               # Container communication
+│       └── dockerfile_instructions.md  # Dockerfile mastery guide
 ├── .devops_journey/               # Learning tracking
-│   ├── cheatsheets.md            # Consolidated quick reference
+│   ├── cheatsheets.md            # Consolidated quick reference (see Docker section)
 │   ├── journey_summary.md        # Progress overview
 │   └── progress_log.md           # Detailed learning log
 └── .github/prompts/              # AI assistant prompts
@@ -153,8 +166,11 @@ DevOps_Learning_Path/
 - **[Git Fundamentals](revising_git/git.md)**: Version control, branching, collaboration, workflows
 - **[Linux/Unix Commands](revising_linux/linux_commands.md)**: System administration, file operations, process management, networking
 
+### Currently Learning
+- **[Docker & Containerization](revising_docker/docker_guide.md)** ⚡: Containerization fundamentals, Docker images, volumes, networking, Dockerfile creation, and production best practices.  
+  - See [Docker deep-dive modules](#-learning-path) and [Docker cheatsheet](.devops_journey/cheatsheets.md#docker--containerization-⚡-in-progress)
+
 ### Upcoming Topics
-- **Docker**: Containerization, images, volumes, networking
 - **CI/CD**: Jenkins, GitHub Actions, GitLab CI, deployment pipelines
 - **Infrastructure as Code**: Terraform, CloudFormation
 - **Configuration Management**: Ansible, Chef, Puppet

@@ -195,6 +195,39 @@ This markdown file helps you track your progress, topics studied, and key notes 
 
 ---
 
+### 📅 Day 4 - September 20, 2025
+**Topic:** CI/CD Fundamentals
+**Status:** ⚡ IN PROGRESS - Starting CI/CD journey
+**Resource:** Created CI/CD guide and deep-dive modules for Jenkins, GitHub Actions, and GitLab CI
+
+**What I'm Learning:**
+- CI/CD core concepts and benefits
+- Pipeline stages: source, build, test, package, deploy, monitor
+- Hands-on with Jenkins, GitHub Actions, and GitLab CI
+- Best practices for automation, feedback, and quality
+- Troubleshooting common CI/CD issues
+
+**Files Created/Updated:**
+- `revising_cicd/cicd_guide.md` - Main CI/CD guide
+- `revising_cicd/cicd_deep_dive/jenkins.md` - Jenkins deep dive
+- `revising_cicd/cicd_deep_dive/github_actions.md` - GitHub Actions deep dive
+- `revising_cicd/cicd_deep_dive/gitlab_ci.md` - GitLab CI deep dive
+
+**Key Learning Areas:**
+- CI/CD automation and feedback loops
+- Pipeline configuration and best practices
+- Tool-specific workflows (Jenkins, GitHub Actions, GitLab CI)
+- Debugging and optimizing pipelines
+
+**Current Understanding Level:** 📚 BUILDING FOUNDATION
+
+**Next Learning Steps:**
+- [ ] Set up a sample pipeline in each tool
+- [ ] Practice with real-world project automation
+- [ ] Explore advanced pipeline features
+
+---
+
 ## Learning Tips
 
 ### Before Starting a New Topic

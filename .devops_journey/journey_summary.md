@@ -20,14 +20,14 @@ A high-level overview of your DevOps learning progress and achievements.
 ### Currently Learning ⚡
 | Topic | Status | Date Started | Progress |
 |-------|--------|---------------|----------|
-| *Next topic to be determined* | - | - | - |
+| **CI/CD Fundamentals** | ⚡ **IN PROGRESS** | Sept 20, 2025 | Building CI/CD foundation |
 
 ### Current Status
 - **Topics Mastered:** 3
-- **Topics In Progress:** 0
-- **Learning Days:** 3
-- **Files Created:** 11 documentation files (5 Docker guides added)
-- **Next Learning Session:** Ready to begin new topic
+- **Topics In Progress:** 1
+- **Learning Days:** 4
+- **Files Created:** 15 documentation files (added CI/CD guides)
+- **Next Learning Session:** Continue CI/CD hands-on
 
 ---
 
@@ -82,7 +82,10 @@ A high-level overview of your DevOps learning progress and achievements.
 Based on typical DevOps learning paths, consider these next topics:
 
 ### Immediate Next Steps (Foundational)
-1. **CI/CD Fundamentals** - Automation pipelines and deployment workflows
+1. **CI/CD Fundamentals** ⚡ CURRENTLY LEARNING - Automation pipelines and deployment workflows
+2. **Infrastructure as Code** - Terraform, CloudFormation
+3. **Configuration Management** - Ansible, Chef, Puppet
+4. **Monitoring & Logging** - Prometheus, ELK Stack
 
 ### Intermediate Topics
 4. **Infrastructure as Code** - Terraform, CloudFormation

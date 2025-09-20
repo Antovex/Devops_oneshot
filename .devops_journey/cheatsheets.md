@@ -9,6 +9,7 @@ This markdown file will contain concise cheatsheets for each DevOps topic you re
 - [Git Fundamentals](#git-fundamentals) ✅ **REVISED**
 - [Linux/Unix Commands](#linuxunix-commands) ✅ **REVISED**  
 - [Docker & Containerization](#docker--containerization) ✅ **REVISED**
+- [CI/CD Fundamentals](#cicd-fundamentals) ⚡ **IN PROGRESS**
 
 ---
 
@@ -74,6 +75,7 @@ Examples:
 - Write commit messages that complete: "If applied, this commit will ___"
 
 ### 🎯 **Study Status: COMPLETE**
+**Study Status:** ✅ **COMPLETE**
 You've completed all fundamental Git concepts including local workflows, branching, remote repositories, and team collaboration patterns. Ready for production use!
 
 ---
@@ -197,6 +199,7 @@ telnet host port            # Manual port test
 - **Check man pages**: `man command` for help
 
 ### 🎯 **Study Status: COMPLETE**
+**Study Status:** ✅ **COMPLETE**
 You've completed essential Linux/Unix commands for DevOps operations including system administration, file management, process control, network troubleshooting, and security practices. Ready for production environments!
 
 ---
@@ -343,7 +346,81 @@ docker run --rm -it -v ${PWD}:/workspace ubuntu:20.04 bash
 - **Monitor resources**: With `docker stats`
 
 ### 🎯 **Study Status: COMPLETE**
+**Study Status:** ✅ **COMPLETE**
 You've completed Docker fundamentals including containerization, images, volumes, networking, Docker Compose, and best practices. Ready for production use!
+
+---
+
+## CI/CD Fundamentals ⚡ **IN PROGRESS**
+
+### Essential Pipeline Commands
+```bash
+# GitHub Actions - Trigger pipeline
+git push origin main                    # Triggers on push to main
+git push origin feature-branch          # Triggers on push to feature branch
+
+# Jenkins CLI (if installed)
+jenkins-cli build job-name              # Trigger Jenkins job
+jenkins-cli console job-name            # View job console output
+
+# GitLab CI - Local pipeline testing
+gitlab-runner exec docker test-job      # Run specific job locally
+```
+
+### Common CI/CD Pipeline Stages
+```yaml
+# GitHub Actions Example Structure
+name: CI/CD Pipeline
+on: [push, pull_request]
+jobs:
+  build:    # Compile/build application
+  test:     # Run automated tests  
+  package:  # Create deployable artifacts
+  deploy:   # Deploy to environments
+```
+
+### Jenkins Pipeline (Jenkinsfile)
+```groovy
+pipeline {
+  agent any
+  stages {
+    stage('Build') { steps { sh 'npm run build' } }
+    stage('Test')  { steps { sh 'npm test' } }
+    stage('Deploy'){ steps { sh './deploy.sh' } }
+  }
+}
+```
+
+### GitLab CI (.gitlab-ci.yml)
+```yaml
+stages:
+  - build
+  - test
+  - deploy
+
+build-job:
+  stage: build
+  script: npm install && npm run build
+
+test-job:
+  stage: test
+  script: npm test
+
+deploy-job:
+  stage: deploy
+  script: ./deploy.sh
+  only: [main]
+```
+
+### Quick Troubleshooting
+- **Pipeline fails?** Check logs in provider UI (GitHub Actions/GitLab CI/Jenkins)
+- **Tests fail?** Run tests locally first: `npm test` or equivalent
+- **Deployment issues?** Verify credentials and environment access
+- **Build timeouts?** Optimize steps, use caching, run stages in parallel
+
+### 🎯 **Study Status: IN PROGRESS**
+**Study Status:** ⚡ **IN PROGRESS**
+You're building CI/CD fundamentals including pipeline automation, Jenkins, GitHub Actions, and GitLab CI. Continue with hands-on practice!
 
 ---
 

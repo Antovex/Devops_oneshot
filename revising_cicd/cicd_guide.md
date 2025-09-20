@@ -1,7 +1,77 @@
 # CI/CD Fundamentals Guide ⚡
 
 A comprehensive, hands-on guide to Continuous Integration and Continuous Delivery/Deployment (CI/CD) for DevOps.
+# CI/CD Fundamentals Guide ⚡
 
+A comprehensive, hands-on guide to Continuous Integration and Continuous Delivery/Deployment (CI/CD) for DevOps.
+
+**🎯 Status:** LEARNING IN PROGRESS - Started September 20, 2025
+
+---
+---
+
+## 🔐 Best Practices & Security
+- Keep pipelines simple and fast
+- Run tests in parallel where possible
+- Fail fast: stop pipeline on first error
+- Use secrets/credentials managers for sensitive data
+- Limit permissions for CI tokens (least privilege)
+- Scan images and artifacts for vulnerabilities
+- Store pipelines as code in the repository
+
+---
+
+## 🆘 Troubleshooting & Quick Reference
+- **Build fails?** Check logs and reproduce locally
+- **Tests fail?** Run tests locally with same environment
+- **Deployment fails?** Validate credentials and target environment
+
+### Quick Commands
+```
+# Trigger a pipeline locally (GitHub Actions runner / act)
+act -P ubuntu-latest=nektos/act-environments-ubuntu:18.04
+
+# View pipeline logs in provider UI (GitHub/GitLab/Jenkins)
+# Build and test locally
+npm install && npm test
+```
+
+---
+
+## Exercises & Next Steps
+- Exercise 1: Create the sample GitHub Actions workflow above in a test repo and push a change to trigger it.
+- Exercise 2: Create a Jenkinsfile and run it against a local Jenkins (Docker image) to observe stage logs.
+- Exercise 3: Extend the GitLab CI example to push a Docker image to a registry using protected variables.
+- Next Steps: Dive into `revising_cicd/cicd_deep_dive/*` modules for tool-specific workflows and advanced patterns.
+
+---
+
+## 📚 Deep Dive Resources
+
+- `revising_cicd/cicd_deep_dive/github_actions.md`
+- `revising_cicd/cicd_deep_dive/jenkins.md`
+- `revising_cicd/cicd_deep_dive/gitlab_ci.md`
+
+```
+Source → Build → Test → Package → Deploy → Monitor
+  ↓        ↓       ↓        ↓         ↓
+GitHub    Jenkins  Unit    Docker    Kubernetes
+Actions   Pipelines  Tests  Images    Observability
+```
+
+## 📋 Quick Navigation
+- [What is CI/CD?](#-what-is-cicd)
+- [Core Concepts & Benefits](#-core-concepts--benefits)
+- [CI/CD Pipeline Stages](#cicd-pipeline-stages)
+- [Quick Start Example (GitHub Actions)](#-quick-start-example-github-actions)
+- [Building a Simple Pipeline (Jenkins/GitLab)](#building-a-simple-pipeline-jenkinsgitlab)
+- [Common Use Cases](#-common-use-cases)
+- [Deep Dive Resources](#-deep-dive-resources)
+- [Best Practices & Security](#-best-practices--security)
+- [Troubleshooting & Quick Reference](#-troubleshooting--quick-reference)
+- [Exercises & Next Steps](#exercises--next-steps)
+
+---
 ---
 
 ## 📋 Table of Contents
@@ -13,6 +83,7 @@ A comprehensive, hands-on guide to Continuous Integration and Continuous Deliver
 - [Best Practices](#best-practices)
 - [Troubleshooting](#troubleshooting)
 - [Quick Reference](#quick-reference)
+- [Exercises & Next Steps](#exercises--next-steps)
 
 ---
 
@@ -78,6 +149,64 @@ jobs:
 
 ---
 
+## Building a Simple Pipeline (Jenkins / GitLab)
+
+### Jenkins (Jenkinsfile)
+```groovy
+pipeline {
+  agent any
+  stages {
+    stage('Build') { steps { sh 'npm run build' } }
+    stage('Test')  { steps { sh 'npm test' } }
+    stage('Package'){ steps { sh 'docker build -t myapp .' } }
+    stage('Deploy') { steps { sh './deploy.sh' } }
+  }
+}
+```
+
+### GitLab CI (`.gitlab-ci.yml`)
+```yaml
+stages:
+  - build
+  - test
+  - package
+  - deploy
+
+build-job:
+  stage: build
+  script:
+    - npm install
+    - npm run build
+
+test-job:
+  stage: test
+  script:
+    - npm test
+
+package-job:
+  stage: package
+  script:
+    - docker build -t registry.example.com/myapp:latest .
+
+deploy-job:
+  stage: deploy
+  script:
+    - ./deploy.sh
+  only:
+    - main
+```
+
+---
+
+## 🎯 Common Use Cases
+
+- **CI for Pull Requests:** Run tests and linters on PRs to prevent regressions.
+- **CD to Staging:** Automatically deploy to staging after passing tests.
+- **Canary/Blue-Green Deployments:** Reduce risk for production updates.
+- **Build + Publish Artifacts:** Build binaries, container images, and push to registries.
+- **Infrastructure Validation:** Run IaC plan/validate steps in pipelines.
+
+
 ## ✅ Best Practices
 - Keep pipelines simple and fast
 - Run tests in parallel where possible
@@ -109,7 +238,7 @@ jobs:
 
 ---
 
-**Next Steps:**
-- Explore deep-dive modules for Jenkins, GitHub Actions, and GitLab CI
-- Practice by setting up a pipeline for your own project
-- Track your progress in `.devops_journey/progress_log.md`
+## Exercises & Next Steps
+- Exercise 1: Create the sample GitHub Actions workflow above in a test repo and push a change to trigger it.
+- Exercise 2: Add a caching step to speed up dependency installation.
+- Next Steps: Explore deep-dive modules for Jenkins, GitHub Actions, and GitLab CI. Track your progress in `.devops_journey/progress_log.md`.

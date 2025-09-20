@@ -6,6 +6,14 @@ A hands-on guide to CI/CD with GitHub Actions.
 - Native CI/CD for GitHub repositories
 - Automate workflows for build, test, deploy
 
+# GitHub Actions Deep Dive
+
+A hands-on guide to CI/CD with GitHub Actions.
+
+## What is GitHub Actions?
+- Native CI/CD for GitHub repositories
+- Automate workflows for build, test, deploy
+
 ## Key Concepts
 - **Workflow:** Automated process triggered by events
 - **Job:** Set of steps run on a runner
@@ -38,6 +46,10 @@ jobs:
 - Check Actions tab for logs
 - Validate YAML syntax
 - Ensure correct event triggers
+
+## Exercises & Next Steps
+- Exercise: Create the Node.js workflow in a test repo and push a change to verify the run.
+- Next: Add a job that builds a Docker image and pushes it to a registry using secrets.
 
 ## Resources
 - [GitHub Actions Docs](https://docs.github.com/en/actions)

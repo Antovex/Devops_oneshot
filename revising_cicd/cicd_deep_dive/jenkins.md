@@ -6,6 +6,14 @@ A practical guide to Jenkins for CI/CD automation.
 - Open-source automation server for building, testing, and deploying software.
 - Highly extensible with plugins.
 
+# Jenkins Deep Dive
+
+A practical guide to Jenkins for CI/CD automation.
+
+## What is Jenkins?
+- Open-source automation server for building, testing, and deploying software.
+- Highly extensible with plugins.
+
 ## Key Concepts
 - **Pipeline:** Sequence of automated steps (build, test, deploy)
 - **Job:** A single automation task
@@ -40,6 +48,10 @@ pipeline {
 - Check build logs for errors
 - Validate Jenkinsfile syntax
 - Ensure agents have required tools
+
+## Exercises & Next Steps
+- Exercise: Run a local Jenkins instance (Docker image) and create a pipeline job using the example Jenkinsfile.
+- Next: Integrate a Docker build stage and push the image to a registry using Jenkins credentials.
 
 ## Resources
 - [Jenkins Documentation](https://www.jenkins.io/doc/)

@@ -46,9 +46,10 @@ Follow this structured path to build strong DevOps foundations:
 2. **[Linux/Unix Commands](revising_linux/linux_commands.md)** ✅ - Command-line proficiency for operations
 
 ### Phase 2: Containerization & Automation
-3. **[Docker & Containerization](revising_docker/docker_guide.md)** ⚡ - Package applications consistently, master images, containers, volumes, networking, and Dockerfile creation.  
+3. **[Docker & Containerization](revising_docker/docker_guide.md)** ✅ - Package applications consistently, master images, containers, volumes, networking, and Dockerfile creation.  
    - Deep-dive modules: [Images & Containers](revising_docker/docker_deep_dive/images_and_containers.md), [Volumes & Persistence](revising_docker/docker_deep_dive/volumes_and_persistence.md), [Networking](revising_docker/docker_deep_dive/networking.md), [Dockerfile Instructions](revising_docker/docker_deep_dive/dockerfile_instructions.md)
-4. **CI/CD Fundamentals** 📋 - Automate testing and deployment
+4. **[CI/CD Fundamentals](revising_cicd/cicd_guide.md)** ⚡ - Automate testing and deployment
+   - Deep-dive modules: [Jenkins](revising_cicd/cicd_deep_dive/jenkins.md), [GitHub Actions](revising_cicd/cicd_deep_dive/github_actions.md), [GitLab CI](revising_cicd/cicd_deep_dive/gitlab_ci.md)
 
 ### Phase 3: Infrastructure & Configuration
 5. **Infrastructure as Code** 📋 - Manage infrastructure with code
@@ -84,11 +85,15 @@ Follow this structured path to build strong DevOps foundations:
    - Try the hands-on scenarios
 
 4. **Continue with Docker & Containerization**
-   - Read [`revising_docker/docker_guide.md`](revising_docker/docker_guide.md)
-   - Explore deep-dive modules for advanced topics
-   - Use the [Docker cheatsheet](.devops_journey/cheatsheets.md#docker--containerization-⚡-in-progress) for quick reference
+   - Read [`revising_docker/docker_guide.md`](revising_docker/docker_guide.md) ✅
+   - Explore deep-dive modules for advanced topics ✅
+   - Use the [Docker cheatsheet](.devops_journey/cheatsheets.md#docker--containerization-✅-revised) for quick reference ✅
 
-5. **Track your progress**
+5. **Start CI/CD Fundamentals**
+   - Read [`revising_cicd/cicd_guide.md`](revising_cicd/cicd_guide.md) ⚡
+   - Explore deep-dive modules for Jenkins, GitHub Actions, and GitLab CI ⚡
+
+6. **Track your progress**
    - Use [`.devops_journey/progress_log.md`](.devops_journey/progress_log.md) as a template
    - Update your learning status as you progress
 
@@ -163,12 +168,13 @@ DevOps_Learning_Path/
 ## 📚 Topics Covered
 
 ### Completed Topics
-- **[Git Fundamentals](revising_git/git.md)**: Version control, branching, collaboration, workflows
-- **[Linux/Unix Commands](revising_linux/linux_commands.md)**: System administration, file operations, process management, networking
+- **[Git Fundamentals](revising_git/git.md)**: Version control, branching, collaboration, workflows ✅
+- **[Linux/Unix Commands](revising_linux/linux_commands.md)**: System administration, file operations, process management, networking ✅
+- **[Docker & Containerization](revising_docker/docker_guide.md)**: Containerization fundamentals, Docker images, volumes, networking, Dockerfile creation, and production best practices ✅
 
 ### Currently Learning
-- **[Docker & Containerization](revising_docker/docker_guide.md)** ⚡: Containerization fundamentals, Docker images, volumes, networking, Dockerfile creation, and production best practices.  
-  - See [Docker deep-dive modules](#-learning-path) and [Docker cheatsheet](.devops_journey/cheatsheets.md#docker--containerization-⚡-in-progress)
+- **[CI/CD Fundamentals](revising_cicd/cicd_guide.md)** ⚡: Pipeline automation, Jenkins, GitHub Actions, GitLab CI, deployment strategies.  
+  - See [CI/CD deep-dive modules](revising_cicd/cicd_deep_dive/) and [CI/CD cheatsheet](.devops_journey/cheatsheets.md#cicd-fundamentals-⚡-in-progress)
 
 ### Upcoming Topics
 - **CI/CD**: Jenkins, GitHub Actions, GitLab CI, deployment pipelines
@@ -273,6 +279,6 @@ Feel free to use this content for:
 
 [Begin with Git Fundamentals](revising_git/git.md) | [Jump to Linux Commands](revising_linux/linux_commands.md) | [View Progress Tracking](.devops_journey/README.md)
 
-*Last updated: September 18, 2025*
+*Last updated: September 21, 2025*
 
 </div>

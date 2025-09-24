@@ -48,12 +48,12 @@ Follow this structured path to build strong DevOps foundations:
 ### Phase 2: Containerization & Automation
 3. **[Docker & Containerization](revising_docker/docker_guide.md)** ✅ - Package applications consistently, master images, containers, volumes, networking, and Dockerfile creation.  
    - Deep-dive modules: [Images & Containers](revising_docker/docker_deep_dive/images_and_containers.md), [Volumes & Persistence](revising_docker/docker_deep_dive/volumes_and_persistence.md), [Networking](revising_docker/docker_deep_dive/networking.md), [Dockerfile Instructions](revising_docker/docker_deep_dive/dockerfile_instructions.md)
-4. **[CI/CD Fundamentals](revising_cicd/cicd_guide.md)** ⚡ - Automate testing and deployment
+4. **[CI/CD Fundamentals](revising_cicd/cicd_guide.md)** ✅ - Automate testing and deployment
    - Deep-dive modules: [Jenkins](revising_cicd/cicd_deep_dive/jenkins.md), [GitHub Actions](revising_cicd/cicd_deep_dive/github_actions.md), [GitLab CI](revising_cicd/cicd_deep_dive/gitlab_ci.md)
 
 ### Phase 3: Infrastructure & Configuration
-5. **Infrastructure as Code** 📋 - Manage infrastructure with code
-6. **Configuration Management** 📋 - Automate system configuration
+5. **Infrastructure as Code** ⚡ - Manage infrastructure with code (Terraform, CloudFormation)
+6. **Configuration Management** 📋 - Automate system configuration (Ansible, Chef, Puppet)
 
 ### Phase 4: Monitoring & Cloud
 7. **Monitoring & Logging** 📋 - Observe system health and performance
@@ -90,10 +90,14 @@ Follow this structured path to build strong DevOps foundations:
    - Use the [Docker cheatsheet](.devops_journey/cheatsheets.md#docker--containerization-✅-revised) for quick reference ✅
 
 5. **Start CI/CD Fundamentals**
-   - Read [`revising_cicd/cicd_guide.md`](revising_cicd/cicd_guide.md) ⚡
-   - Explore deep-dive modules for Jenkins, GitHub Actions, and GitLab CI ⚡
+   - Read [`revising_cicd/cicd_guide.md`](revising_cicd/cicd_guide.md) ✅
+   - Explore deep-dive modules for Jenkins, GitHub Actions, and GitLab CI ✅
 
-6. **Track your progress**
+6. **Begin Infrastructure as Code**
+   - Prepare for Terraform and CloudFormation learning ⚡
+   - Set up cloud provider accounts (AWS/Azure/GCP) ⚡
+
+7. **Track your progress**
    - Use [`.devops_journey/progress_log.md`](.devops_journey/progress_log.md) as a template
    - Update your learning status as you progress
 
@@ -171,14 +175,13 @@ DevOps_Learning_Path/
 - **[Git Fundamentals](revising_git/git.md)**: Version control, branching, collaboration, workflows ✅
 - **[Linux/Unix Commands](revising_linux/linux_commands.md)**: System administration, file operations, process management, networking ✅
 - **[Docker & Containerization](revising_docker/docker_guide.md)**: Containerization fundamentals, Docker images, volumes, networking, Dockerfile creation, and production best practices ✅
+- **[CI/CD Fundamentals](revising_cicd/cicd_guide.md)**: Pipeline automation, Jenkins, GitHub Actions, GitLab CI, deployment strategies ✅
 
 ### Currently Learning
-- **[CI/CD Fundamentals](revising_cicd/cicd_guide.md)** ⚡: Pipeline automation, Jenkins, GitHub Actions, GitLab CI, deployment strategies.  
-  - See [CI/CD deep-dive modules](revising_cicd/cicd_deep_dive/) and [CI/CD cheatsheet](.devops_journey/cheatsheets.md#cicd-fundamentals-⚡-in-progress)
+- **Infrastructure as Code** ⚡: Getting ready to learn Terraform, CloudFormation, and infrastructure automation
 
 ### Upcoming Topics
-- **CI/CD**: Jenkins, GitHub Actions, GitLab CI, deployment pipelines
-- **Infrastructure as Code**: Terraform, CloudFormation
+- **Infrastructure as Code**: Terraform, CloudFormation ⚡ NEXT
 - **Configuration Management**: Ansible, Chef, Puppet
 - **Monitoring**: Prometheus, Grafana, ELK Stack
 - **Cloud Platforms**: AWS, Azure, GCP fundamentals
@@ -279,6 +282,6 @@ Feel free to use this content for:
 
 [Begin with Git Fundamentals](revising_git/git.md) | [Jump to Linux Commands](revising_linux/linux_commands.md) | [View Progress Tracking](.devops_journey/README.md)
 
-*Last updated: September 21, 2025*
+*Last updated: September 23, 2025*
 
 </div>

@@ -52,7 +52,8 @@ Follow this structured path to build strong DevOps foundations:
    - Deep-dive modules: [Jenkins](revising_cicd/cicd_deep_dive/jenkins.md), [GitHub Actions](revising_cicd/cicd_deep_dive/github_actions.md), [GitLab CI](revising_cicd/cicd_deep_dive/gitlab_ci.md)
 
 ### Phase 3: Infrastructure & Configuration
-5. **Infrastructure as Code** ⚡ - Manage infrastructure with code (Terraform, CloudFormation)
+5. **[Infrastructure as Code](revising_iac/iac_guide.md)** ⚡ - Manage infrastructure with code (Terraform, CloudFormation, Ansible)
+   - Deep-dive modules: [Terraform](revising_iac/iac_deep_dive/terraform.md), [CloudFormation](revising_iac/iac_deep_dive/cloudformation.md), [Ansible](revising_iac/iac_deep_dive/ansible.md)
 6. **Configuration Management** 📋 - Automate system configuration (Ansible, Chef, Puppet)
 
 ### Phase 4: Monitoring & Cloud
@@ -94,7 +95,8 @@ Follow this structured path to build strong DevOps foundations:
    - Explore deep-dive modules for Jenkins, GitHub Actions, and GitLab CI ✅
 
 6. **Begin Infrastructure as Code**
-   - Prepare for Terraform and CloudFormation learning ⚡
+   - Read [`revising_iac/iac_guide.md`](revising_iac/iac_guide.md) ⚡
+   - Explore deep-dive modules for Terraform, CloudFormation, and Ansible ⚡
    - Set up cloud provider accounts (AWS/Azure/GCP) ⚡
 
 7. **Track your progress**
@@ -152,13 +154,18 @@ DevOps_Learning_Path/
 │   └── git.md                     # Complete Git reference
 ├── revising_linux/                # Linux/Unix Commands
 │   └── linux_commands.md         # Complete Linux reference
-├── revising_docker/               # Docker & Containerization
-│   ├── docker_guide.md           # Main Docker guide with analogies
-│   └── docker_deep_dive/         # Specialized deep-dive modules
-│       ├── images_and_containers.md    # Images, containers, optimization
-│       ├── volumes_and_persistence.md  # Data persistence strategies  
-│       ├── networking.md               # Container communication
-│       └── dockerfile_instructions.md  # Dockerfile mastery guide
+├── revising_cicd/                 # CI/CD Fundamentals
+│   ├── cicd_guide.md             # Main CI/CD guide with fundamentals
+│   └── cicd_deep_dive/           # Specialized deep-dive modules
+│       ├── jenkins.md            # Jenkins pipelines and automation
+│       ├── github_actions.md     # GitHub Actions workflows
+│       └── gitlab_ci.md          # GitLab CI/CD configuration
+├── revising_iac/                 # Infrastructure as Code
+│   ├── iac_guide.md             # Main IaC guide with fundamentals
+│   └── iac_deep_dive/           # Specialized deep-dive modules
+│       ├── terraform.md          # Terraform state management and modules
+│       ├── cloudformation.md     # CloudFormation templates and stacks
+│       └── ansible.md           # Ansible automation and configuration
 ├── .devops_journey/               # Learning tracking
 │   ├── cheatsheets.md            # Consolidated quick reference (see Docker section)
 │   ├── journey_summary.md        # Progress overview
@@ -178,10 +185,9 @@ DevOps_Learning_Path/
 - **[CI/CD Fundamentals](revising_cicd/cicd_guide.md)**: Pipeline automation, Jenkins, GitHub Actions, GitLab CI, deployment strategies ✅
 
 ### Currently Learning
-- **Infrastructure as Code** ⚡: Getting ready to learn Terraform, CloudFormation, and infrastructure automation
+- **[Infrastructure as Code](revising_iac/iac_guide.md)** ⚡: Learning Terraform, CloudFormation, and Ansible for infrastructure automation
 
 ### Upcoming Topics
-- **Infrastructure as Code**: Terraform, CloudFormation ⚡ NEXT
 - **Configuration Management**: Ansible, Chef, Puppet
 - **Monitoring**: Prometheus, Grafana, ELK Stack
 - **Cloud Platforms**: AWS, Azure, GCP fundamentals
@@ -282,6 +288,6 @@ Feel free to use this content for:
 
 [Begin with Git Fundamentals](revising_git/git.md) | [Jump to Linux Commands](revising_linux/linux_commands.md) | [View Progress Tracking](.devops_journey/README.md)
 
-*Last updated: September 23, 2025*
+*Last updated: September 25, 2025*
 
 </div>

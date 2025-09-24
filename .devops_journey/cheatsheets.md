@@ -10,6 +10,7 @@ This markdown file will contain concise cheatsheets for each DevOps topic you re
 - [Linux/Unix Commands](#linuxunix-commands) ✅ **REVISED**  
 - [Docker & Containerization](#docker--containerization) ✅ **REVISED**
 - [CI/CD Fundamentals](#cicd-fundamentals) ✅ **REVISED**
+- [Infrastructure as Code](#infrastructure-as-code) ⚡ **IN PROGRESS**
 
 ---
 
@@ -421,6 +422,242 @@ deploy-job:
 ### 🎯 **Study Status: COMPLETE**
 **Study Status:** ✅ **COMPLETE**
 You've completed CI/CD fundamentals including pipeline automation, Jenkins, GitHub Actions, GitLab CI, and production deployment practices. Ready for advanced DevOps automation!
+
+---
+
+## Infrastructure as Code ⚡ **IN PROGRESS**
+
+### Terraform Essentials
+```bash
+# Project Setup
+terraform init                         # Initialize project (download providers)
+terraform validate                     # Check syntax and configuration
+terraform fmt                         # Format code to standard style
+terraform plan                        # Preview changes before applying
+terraform apply                       # Apply changes to infrastructure
+terraform destroy                     # Destroy all managed infrastructure
+
+# State Management
+terraform state list                  # List all resources in state
+terraform state show resource_name    # Show details of specific resource
+terraform state mv old_name new_name  # Rename resource in state
+terraform state rm resource_name      # Remove resource from state
+terraform state pull > backup.tfstate # Backup state file
+```
+
+### Terraform Core Workflow
+```hcl
+# 1. Provider Configuration
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
+}
+
+# 2. Resource Definition
+resource "aws_instance" "web" {
+  ami           = "ami-0c55b159cbfafe1d0"
+  instance_type = "t2.micro"
+  
+  tags = {
+    Name = "WebServer"
+    Environment = "production"
+  }
+}
+
+# 3. Output Values
+output "instance_ip" {
+  value = aws_instance.web.public_ip
+}
+```
+
+### AWS CloudFormation Essentials
+```bash
+# Stack Operations
+aws cloudformation create-stack --stack-name my-stack --template-body file://template.yaml
+aws cloudformation update-stack --stack-name my-stack --template-body file://template.yaml  
+aws cloudformation delete-stack --stack-name my-stack
+aws cloudformation describe-stacks --stack-name my-stack
+
+# Useful Commands
+aws cloudformation validate-template --template-body file://template.yaml
+aws cloudformation describe-stack-events --stack-name my-stack
+aws cloudformation get-template --stack-name my-stack
+```
+
+### CloudFormation Template Structure
+```yaml
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Basic web server infrastructure'
+
+Parameters:
+  InstanceType:
+    Type: String
+    Default: t2.micro
+    AllowedValues: [t2.micro, t2.small, t2.medium]
+
+Resources:
+  WebServer:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-0c55b159cbfafe1d0
+      InstanceType: !Ref InstanceType
+      Tags:
+        - Key: Name
+          Value: WebServer
+
+Outputs:
+  InstanceId:
+    Description: Instance ID
+    Value: !Ref WebServer
+```
+
+### Ansible Essentials
+```bash
+# Inventory and Connection
+ansible all -m ping                    # Test connection to all hosts
+ansible-inventory --list               # Show inventory in JSON format
+ansible-config dump                    # Show current configuration
+
+# Ad-hoc Commands  
+ansible webservers -m shell -a "uptime"           # Run shell command
+ansible all -m copy -a "src=file.txt dest=/tmp/"  # Copy file to all hosts
+ansible databases -m service -a "name=mysql state=restarted"  # Restart service
+
+# Playbook Operations
+ansible-playbook site.yml              # Run playbook
+ansible-playbook site.yml --check      # Dry run (check mode)
+ansible-playbook site.yml --tags web   # Run only specific tags
+ansible-playbook site.yml --limit webservers  # Run on specific group
+```
+
+### Ansible Playbook Structure
+```yaml
+---
+- name: Configure web servers
+  hosts: webservers
+  become: yes
+  vars:
+    app_name: mywebapp
+    
+  tasks:
+    - name: Install nginx
+      package:
+        name: nginx
+        state: present
+        
+    - name: Start nginx
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+        
+    - name: Copy configuration
+      template:
+        src: nginx.conf.j2
+        dest: /etc/nginx/nginx.conf
+      notify: restart nginx
+      
+  handlers:
+    - name: restart nginx
+      service:
+        name: nginx
+        state: restarted
+```
+
+### Common IaC Patterns
+```bash
+# Multi-Environment Management
+terraform workspace new production     # Create workspace for environment
+terraform workspace select staging    # Switch to staging environment
+terraform workspace list              # List all workspaces
+
+# Module Usage (Terraform)
+module "vpc" {
+  source = "./modules/networking"
+  
+  cidr_block = "10.0.0.0/16"
+  environment = "production"
+}
+
+# Variable Files
+terraform apply -var-file="production.tfvars"  # Use specific variable file
+terraform apply -var="instance_type=t3.large"  # Override single variable
+```
+
+### IaC Security Best Practices
+```bash
+# Secrets Management
+export AWS_ACCESS_KEY_ID="your-key"           # Use environment variables
+export AWS_SECRET_ACCESS_KEY="your-secret"    # Never hardcode credentials
+
+# Terraform Security
+terraform plan -detailed-exitcode             # Check for changes in CI/CD
+tfsec .                                       # Security scanning for Terraform
+checkov -f main.tf                           # Policy checking
+
+# Ansible Vault
+ansible-vault create secrets.yml              # Create encrypted file
+ansible-vault encrypt vars.yml                # Encrypt existing file  
+ansible-playbook site.yml --ask-vault-pass   # Run with encrypted vars
+```
+
+### Troubleshooting Common Issues
+```bash
+# Terraform Issues
+terraform refresh                             # Sync state with real infrastructure
+terraform force-unlock LOCK_ID               # Remove stuck state lock
+terraform import aws_instance.web i-1234567  # Import existing resource
+
+# CloudFormation Issues  
+aws cloudformation cancel-update-stack --stack-name my-stack    # Cancel stuck update
+aws cloudformation continue-update-rollback --stack-name my-stack  # Continue rollback
+
+# Ansible Issues
+ansible all -m setup                         # Gather facts for debugging
+ansible-playbook site.yml -vvv               # Verbose output for troubleshooting
+ansible all -m ping -u ubuntu --private-key ~/.ssh/id_rsa  # Test connection with specific key
+```
+
+### Quick Infrastructure Patterns
+```bash
+# Simple Web Server (Terraform)
+terraform init
+terraform plan -var="instance_type=t2.micro"
+terraform apply -auto-approve
+
+# Database Setup (Ansible)
+ansible-playbook -i inventory database.yml --tags mysql
+
+# Multi-tier Application (CloudFormation)
+aws cloudformation create-stack \
+  --stack-name webapp \
+  --template-body file://three-tier-app.yaml \
+  --parameters ParameterKey=Environment,ParameterValue=production
+```
+
+### Best Practices Reminders
+- **Version Control**: Always commit IaC code to Git
+- **State Security**: Use remote state with encryption (S3 + DynamoDB for Terraform)
+- **Modular Design**: Create reusable modules/roles/templates
+- **Environment Separation**: Use workspaces, separate accounts, or parameter files
+- **Testing**: Validate templates/playbooks before production deployment
+- **Documentation**: Document variables, outputs, and architectural decisions
+
+### Quick Safety Tips
+- **Always run plan/check first**: Preview changes before applying
+- **Use specific versions**: Pin provider/module versions
+- **Backup state files**: Before major infrastructure changes
+- **Test in dev first**: Never test directly in production
+- **Monitor resources**: Track costs and resource usage
+- **Clean up unused resources**: Regular infrastructure hygiene
+
+### 🎯 **Study Status: IN PROGRESS**
+**Study Status:** ⚡ **IN PROGRESS**
+Currently building comprehensive Infrastructure as Code skills including Terraform, AWS CloudFormation, and Ansible for automated infrastructure management and deployment.
 
 ---
 

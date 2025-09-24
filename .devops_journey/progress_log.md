@@ -135,6 +135,50 @@ This markdown file helps you track your progress, topics studied, and key notes 
 
 ---
 
+### 📅 Day 5 - September 25, 2025
+**Topic:** Infrastructure as Code (IaC)
+**Status:** ⚡ **IN PROGRESS** - Building Comprehensive Understanding
+**Resource:** Creating IaC guides and deep-dive modules for Terraform, CloudFormation, and Ansible
+
+**What I Learned:**
+- IaC core concepts and benefits (declarative infrastructure, version control, reproducibility)
+- Terraform fundamentals and state management with AWS infrastructure examples
+- AWS CloudFormation templates and stack-based resource management
+- Ansible automation for configuration management and application deployment
+- Multi-cloud provider strategies and environment management patterns
+- Security best practices for infrastructure automation and secrets management
+
+**Files Created/Updated:**
+- `revising_iac/iac_guide.md` - Comprehensive IaC guide with fundamentals and practical examples
+- `revising_iac/iac_deep_dive/terraform.md` - Terraform deep dive with state management and modules
+- `revising_iac/iac_deep_dive/cloudformation.md` - CloudFormation advanced patterns and enterprise features
+- `revising_iac/iac_deep_dive/ansible.md` - Ansible automation with playbooks, roles, and testing
+- `.devops_journey/cheatsheets.md` - Added comprehensive IaC section with essential commands
+
+**Key Learning Areas:**
+- Declarative vs imperative infrastructure approaches ⚡
+- Terraform state management and workspace organization ⚡
+- AWS CloudFormation nested stacks and cross-stack references ⚡
+- Ansible playbooks, roles, and testing frameworks ⚡
+- Multi-environment deployment strategies ⚡
+- Infrastructure security and compliance patterns ⚡
+
+**Study Status:** ⚡ **IN PROGRESS** - Building foundation for infrastructure automation and cloud management
+
+**Session Notes:**
+- Developing practical understanding of infrastructure automation across multiple platforms
+- Creating hands-on examples for AWS infrastructure deployment and management
+- Emphasizing best practices for security, scalability, and maintainability
+- Building skills for advanced DevOps automation and cloud-native architectures
+
+---
+
+### 📅 Ready for Next Topic
+**Status:** 🚀 Ready for Next Learning Session  
+**Current Progress:** Git ✅ Complete | Linux/Unix ✅ Complete | Docker ✅ Complete | CI/CD ✅ Complete | IaC ⚡ In Progress
+
+---
+
 ## Learning Tips
 
 ### Before Starting a New Topic

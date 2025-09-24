@@ -1,13 +1,9 @@
 # CI/CD Fundamentals Guide ⚡
 
 A comprehensive, hands-on guide to Continuous Integration and Continuous Delivery/Deployment (CI/CD) for DevOps.
-# CI/CD Fundamentals Guide ⚡
-
-A comprehensive, hands-on guide to Continuous Integration and Continuous Delivery/Deployment (CI/CD) for DevOps.
 
 **🎯 Status:** LEARNING IN PROGRESS - Started September 20, 2025
 
----
 ---
 
 ## 🔐 Best Practices & Security

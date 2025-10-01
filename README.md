@@ -52,9 +52,10 @@ Follow this structured path to build strong DevOps foundations:
    - Deep-dive modules: [Jenkins](revising_cicd/cicd_deep_dive/jenkins.md), [GitHub Actions](revising_cicd/cicd_deep_dive/github_actions.md), [GitLab CI](revising_cicd/cicd_deep_dive/gitlab_ci.md)
 
 ### Phase 3: Infrastructure & Configuration
-5. **[Infrastructure as Code](revising_iac/iac_guide.md)** ⚡ - Manage infrastructure with code (Terraform, CloudFormation, Ansible)
+5. **[Infrastructure as Code](revising_iac/iac_guide.md)** ✅ - Manage infrastructure with code (Terraform, CloudFormation, Ansible)
    - Deep-dive modules: [Terraform](revising_iac/iac_deep_dive/terraform.md), [CloudFormation](revising_iac/iac_deep_dive/cloudformation.md), [Ansible](revising_iac/iac_deep_dive/ansible.md)
-6. **Configuration Management** 📋 - Automate system configuration (Ansible, Chef, Puppet)
+6. **[Configuration Management](revising_config_management/configuration_guide.md)** ⚡ - Automate system configuration (Ansible, Chef, Puppet)
+   - Deep-dive modules: [Advanced Ansible](revising_config_management/config_deep_dive/ansible_advanced.md), [Chef](revising_config_management/config_deep_dive/chef.md), [Puppet](revising_config_management/config_deep_dive/puppet.md)
 
 ### Phase 4: Monitoring & Cloud
 7. **Monitoring & Logging** 📋 - Observe system health and performance
@@ -95,9 +96,14 @@ Follow this structured path to build strong DevOps foundations:
    - Explore deep-dive modules for Jenkins, GitHub Actions, and GitLab CI ✅
 
 6. **Begin Infrastructure as Code**
-   - Read [`revising_iac/iac_guide.md`](revising_iac/iac_guide.md) ⚡
-   - Explore deep-dive modules for Terraform, CloudFormation, and Ansible ⚡
-   - Set up cloud provider accounts (AWS/Azure/GCP) ⚡
+   - Read [`revising_iac/iac_guide.md`](revising_iac/iac_guide.md) ✅
+   - Explore deep-dive modules for Terraform, CloudFormation, and Ansible ✅
+   - Set up cloud provider accounts (AWS/Azure/GCP) ✅
+
+7. **Start Configuration Management**
+   - Read [`revising_config_management/configuration_guide.md`](revising_config_management/configuration_guide.md) ⚡
+   - Explore deep-dive modules for Ansible, Chef, and Puppet ⚡
+   - Practice automation with real servers ⚡
 
 7. **Track your progress**
    - Use [`.devops_journey/progress_log.md`](.devops_journey/progress_log.md) as a template
@@ -166,6 +172,12 @@ DevOps_Learning_Path/
 │       ├── terraform.md          # Terraform state management and modules
 │       ├── cloudformation.md     # CloudFormation templates and stacks
 │       └── ansible.md           # Ansible automation and configuration
+├── revising_config_management/   # Configuration Management
+│   ├── configuration_guide.md   # Main Config Management guide
+│   └── config_deep_dive/        # Specialized deep-dive modules
+│       ├── ansible_advanced.md   # Advanced Ansible patterns and enterprise
+│       ├── chef.md              # Chef cookbooks and enterprise features
+│       └── puppet.md            # Puppet manifests and enterprise management
 ├── .devops_journey/               # Learning tracking
 │   ├── cheatsheets.md            # Consolidated quick reference (see Docker section)
 │   ├── journey_summary.md        # Progress overview
@@ -183,13 +195,13 @@ DevOps_Learning_Path/
 - **[Linux/Unix Commands](revising_linux/linux_commands.md)**: System administration, file operations, process management, networking ✅
 - **[Docker & Containerization](revising_docker/docker_guide.md)**: Containerization fundamentals, Docker images, volumes, networking, Dockerfile creation, and production best practices ✅
 - **[CI/CD Fundamentals](revising_cicd/cicd_guide.md)**: Pipeline automation, Jenkins, GitHub Actions, GitLab CI, deployment strategies ✅
+- **[Infrastructure as Code](revising_iac/iac_guide.md)**: Terraform, CloudFormation, and Ansible for infrastructure automation ✅
 
 ### Currently Learning
-- **[Infrastructure as Code](revising_iac/iac_guide.md)** ⚡: Learning Terraform, CloudFormation, and Ansible for infrastructure automation
+- **[Configuration Management](revising_config_management/configuration_guide.md)** ⚡: Learning Ansible, Chef, and Puppet for automated system configuration
 
 ### Upcoming Topics
-- **Configuration Management**: Ansible, Chef, Puppet
-- **Monitoring**: Prometheus, Grafana, ELK Stack
+- **Monitoring & Logging**: Prometheus, Grafana, ELK Stack
 - **Cloud Platforms**: AWS, Azure, GCP fundamentals
 - **Kubernetes**: Container orchestration, deployments, services
 - **DevSecOps**: Security integration, vulnerability scanning
@@ -288,6 +300,6 @@ Feel free to use this content for:
 
 [Begin with Git Fundamentals](revising_git/git.md) | [Jump to Linux Commands](revising_linux/linux_commands.md) | [View Progress Tracking](.devops_journey/README.md)
 
-*Last updated: September 25, 2025*
+*Last updated: October 1, 2025*
 
 </div>

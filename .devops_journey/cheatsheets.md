@@ -10,7 +10,8 @@ This markdown file will contain concise cheatsheets for each DevOps topic you re
 - [Linux/Unix Commands](#linuxunix-commands) ✅ **REVISED**  
 - [Docker & Containerization](#docker--containerization) ✅ **REVISED**
 - [CI/CD Fundamentals](#cicd-fundamentals) ✅ **REVISED**
-- [Infrastructure as Code](#infrastructure-as-code) ⚡ **IN PROGRESS**
+- [Infrastructure as Code](#infrastructure-as-code) ✅ **REVISED**
+- [Configuration Management](#configuration-management) ⚡ **IN PROGRESS**
 
 ---
 
@@ -655,9 +656,272 @@ aws cloudformation create-stack \
 - **Monitor resources**: Track costs and resource usage
 - **Clean up unused resources**: Regular infrastructure hygiene
 
+### 🎯 **Study Status: COMPLETE**
+**Study Status:** ✅ **COMPLETE**
+You've completed Infrastructure as Code fundamentals including Terraform, AWS CloudFormation, and Ansible for automated infrastructure management and deployment. Ready for advanced cloud automation!
+
+---
+
+## Configuration Management ⚡ **IN PROGRESS**
+
+### Ansible Essentials
+```bash
+# Connection and Testing
+ansible all -m ping                           # Test connectivity
+ansible all -m setup                          # Gather facts
+ansible-inventory --list                      # Show inventory
+
+# Ad-hoc Commands
+ansible webservers -a "uptime"                # Run shell command
+ansible all -m package -a "name=nginx state=present"  # Install package
+ansible databases -m service -a "name=mysql state=restarted"  # Restart service
+ansible all -m copy -a "src=file.txt dest=/tmp/"  # Copy file
+
+# Playbook Operations
+ansible-playbook site.yml                     # Run playbook
+ansible-playbook site.yml --check             # Dry run
+ansible-playbook site.yml --tags web          # Run specific tags
+ansible-playbook site.yml --limit webservers  # Run on specific group
+ansible-playbook site.yml --ask-vault-pass    # Use encrypted variables
+```
+
+### Ansible Playbook Structure
+```yaml
+---
+- name: Configure web servers
+  hosts: webservers
+  become: yes
+  vars:
+    app_name: webapp
+    
+  tasks:
+    - name: Install nginx
+      package:
+        name: nginx
+        state: present
+        
+    - name: Start nginx
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+        
+    - name: Copy configuration
+      template:
+        src: nginx.conf.j2
+        dest: /etc/nginx/nginx.conf
+      notify: restart nginx
+      
+  handlers:
+    - name: restart nginx
+      service:
+        name: nginx
+        state: restarted
+```
+
+### Ansible Vault (Secrets Management)
+```bash
+# Create encrypted file
+ansible-vault create secrets.yml
+
+# Edit encrypted file
+ansible-vault edit secrets.yml
+
+# Encrypt existing file
+ansible-vault encrypt vars.yml
+
+# Decrypt file
+ansible-vault decrypt secrets.yml
+
+# View encrypted file
+ansible-vault view secrets.yml
+
+# Run playbook with vault
+ansible-playbook site.yml --ask-vault-pass
+ansible-playbook site.yml --vault-password-file ~/.vault_pass
+```
+
+### Chef Essentials
+```bash
+# Node Management
+knife node list                               # List all nodes
+knife node show web1.example.com             # Show node details
+knife node edit web1.example.com             # Edit node attributes
+
+# Cookbook Management
+knife cookbook upload webapp                  # Upload cookbook
+knife cookbook list                           # List cookbooks
+knife cookbook show webapp 1.0.0             # Show cookbook version
+
+# Environment Management
+knife environment list                        # List environments
+knife environment show production             # Show environment
+knife environment from file environments/production.rb  # Upload environment
+
+# Bootstrap New Nodes
+knife bootstrap web1.example.com \
+  --ssh-user ubuntu \
+  --sudo \
+  --identity-file ~/.ssh/aws-key.pem \
+  --node-name web1 \
+  --run-list 'role[webserver]' \
+  --environment production
+
+# Data Bag Management
+knife data bag create secrets                # Create data bag
+knife data bag from file secrets data_bags/secrets/database.json
+knife data bag show secrets database         # Show data bag item
+```
+
+### Chef Recipe Structure
+```ruby
+# Install and configure nginx
+package 'nginx' do
+  action :install
+end
+
+service 'nginx' do
+  action [:enable, :start]
+  supports restart: true, reload: true
+end
+
+template '/etc/nginx/nginx.conf' do
+  source 'nginx.conf.erb'
+  owner 'root'
+  group 'root'
+  mode '0644'
+  variables(
+    worker_processes: node['nginx']['worker_processes']
+  )
+  notifies :reload, 'service[nginx]', :immediately
+end
+```
+
+### Puppet Essentials
+```bash
+# Node Management
+puppet node list                              # List nodes (PE)
+puppet cert list                              # List certificates
+puppet cert sign web1.example.com            # Sign certificate
+
+# Catalog and Code
+puppet parser validate manifests/site.pp     # Validate syntax
+puppet apply manifests/site.pp                # Apply manifest locally
+puppet agent --test                           # Run puppet agent
+puppet agent --noop                           # Dry run
+
+# Module Management
+puppet module list                            # List installed modules
+puppet module install puppetlabs-nginx       # Install module
+puppet module search nginx                    # Search for modules
+
+# Hiera (Data Management)
+hiera webapp::version                         # Lookup hiera value
+hiera -c /etc/puppetlabs/puppet/hiera.yaml webapp::version
+```
+
+### Puppet Manifest Structure
+```puppet
+# Install and configure nginx
+package { 'nginx':
+  ensure => installed,
+}
+
+service { 'nginx':
+  ensure     => running,
+  enable     => true,
+  hasrestart => true,
+  require    => Package['nginx'],
+}
+
+file { '/etc/nginx/nginx.conf':
+  ensure  => file,
+  owner   => 'root',
+  group   => 'root',
+  mode    => '0644',
+  content => template('nginx/nginx.conf.erb'),
+  notify  => Service['nginx'],
+  require => Package['nginx'],
+}
+```
+
+### Testing Configuration Management
+```bash
+# Ansible Testing
+molecule init scenario --driver-name docker   # Initialize testing
+molecule test                                  # Run full test cycle
+molecule converge                              # Run playbook
+molecule verify                                # Run tests
+
+# Chef Testing  
+kitchen list                                   # List test suites
+kitchen test                                   # Run full test cycle
+kitchen converge                               # Run chef
+kitchen verify                                 # Run InSpec tests
+
+# Puppet Testing
+bundle exec rake spec                          # Run rspec tests
+bundle exec rake lint                          # Lint puppet code
+bundle exec rake syntax                        # Validate syntax
+```
+
+### Common Configuration Patterns
+```yaml
+# Multi-environment deployment (Ansible)
+- name: Deploy application
+  hosts: "{{ target_environment }}"
+  vars:
+    app_version: "{{ versions[target_environment] }}"
+  tasks:
+    - name: Deploy app
+      include_tasks: deploy.yml
+
+# Rolling deployment
+- name: Rolling update
+  hosts: webservers
+  serial: 1
+  max_fail_percentage: 0
+  pre_tasks:
+    - name: Remove from load balancer
+      uri:
+        url: "http://lb.example.com/remove/{{ inventory_hostname }}"
+```
+
+### Troubleshooting Common Issues
+```bash
+# Ansible Debugging
+ansible-playbook site.yml -vvv               # Verbose output
+ansible all -m setup | grep ansible_ssh      # Check SSH connectivity
+ansible all -m ping -u ubuntu --private-key ~/.ssh/key.pem  # Test with specific key
+
+# Chef Debugging
+chef-client -l debug                          # Debug mode
+knife ssh 'role:webserver' 'chef-client' -x ubuntu  # Run chef on multiple nodes
+
+# Puppet Debugging
+puppet agent --test --debug                   # Debug mode
+puppet agent --test --noop --verbose          # Dry run with details
+```
+
+### Best Practices Reminders
+- **Idempotency**: Ensure configurations can run multiple times safely
+- **Version Control**: Keep all configuration code in Git
+- **Testing**: Test configurations before production deployment
+- **Secrets Management**: Use proper encryption for sensitive data
+- **Documentation**: Document your infrastructure as code
+- **Monitoring**: Monitor configuration drift and compliance
+
+### Quick Safety Tips
+- **Test in dev first**: Always test configurations in development
+- **Use check/dry-run modes**: Preview changes before applying
+- **Backup before changes**: Backup critical systems before major changes
+- **Monitor after deployment**: Watch for issues after configuration changes
+- **Have rollback plans**: Always have a way to revert changes
+- **Use proper authentication**: Secure access to configuration management systems
+
 ### 🎯 **Study Status: IN PROGRESS**
 **Study Status:** ⚡ **IN PROGRESS**
-Currently building comprehensive Infrastructure as Code skills including Terraform, AWS CloudFormation, and Ansible for automated infrastructure management and deployment.
+Currently building comprehensive Configuration Management skills including Ansible automation, Chef cookbook development, and Puppet manifest management for scalable infrastructure configuration.
 
 ---
 

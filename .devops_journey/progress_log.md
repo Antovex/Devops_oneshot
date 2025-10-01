@@ -173,9 +173,70 @@ This markdown file helps you track your progress, topics studied, and key notes 
 
 ---
 
+### 📅 Day 8 - Oct 1, 2025
+**Topic:** Infrastructure as Code  
+**Status:** ✅ **REVISED** - Complete Understanding Achieved  
+
+**What I Learned:**
+- Infrastructure automation with Terraform, CloudFormation, and Ansible ✅
+- State management and workspace organization for scalable deployments ✅
+- Multi-cloud provider strategies and enterprise deployment patterns ✅
+- Security frameworks and infrastructure testing methodologies ✅
+- Advanced automation patterns for complex enterprise environments ✅
+
+**Files Created/Updated:**
+- `revising_iac/infrastructure_guide.md` - Comprehensive IaC fundamentals and AWS examples
+- `revising_iac/iac_deep_dive/terraform_advanced.md` - Advanced Terraform patterns and best practices
+- `revising_iac/iac_deep_dive/cloudformation.md` - CloudFormation templates and enterprise strategies  
+- `revising_iac/iac_deep_dive/ansible_config.md` - Ansible automation and configuration management
+
+**Key Takeaways:**
+- Infrastructure automation is essential for scalable and reliable deployments ✓
+- Terraform provides excellent state management for complex multi-environment setups ✓
+- CloudFormation offers deep AWS integration with powerful templating capabilities ✓
+- Ansible bridges infrastructure provisioning and configuration management ✓
+- Testing and security must be integrated throughout the infrastructure lifecycle ✓
+
+**Study Status:** ✅ **COMPLETE** - Ready for enterprise-scale infrastructure automation
+
+---
+
+### 📅 Day 9 - Oct 1, 2025
+**Topic:** Configuration Management  
+**Status:** ⚡ **IN PROGRESS** - Building comprehensive automation understanding
+
+**What I'm Learning:**
+- Ansible playbooks, roles, and enterprise automation patterns ⚡
+- Chef cookbook development and testing with Test Kitchen ⚡
+- Puppet manifest development and enterprise management ⚡
+- Testing frameworks: Molecule, Test Kitchen, rspec-puppet ⚡
+- Compliance automation and multi-tool migration strategies ⚡
+
+**Files Created/Updated:**
+- `revising_config_management/configuration_guide.md` - Configuration management fundamentals and practical examples
+- `revising_config_management/config_deep_dive/ansible_advanced.md` - Advanced Ansible patterns and enterprise automation
+- `revising_config_management/config_deep_dive/chef.md` - Chef cookbook development and testing frameworks
+- `revising_config_management/config_deep_dive/puppet.md` - Puppet manifest development and enterprise features
+
+**Key Focus Areas:**
+- Building on Infrastructure as Code foundation for complete automation pipeline ⚡
+- Mastering multiple configuration management tools for enterprise flexibility ⚡
+- Implementing testing frameworks for reliable configuration automation ⚡
+- Understanding enterprise patterns for compliance and security automation ⚡
+
+**Study Status:** ⚡ **IN PROGRESS** - Building foundation for advanced system configuration automation
+
+**Session Notes:**
+- Developing comprehensive understanding of configuration management across multiple platforms
+- Creating practical examples for enterprise-scale automation and compliance
+- Building expertise in testing frameworks and migration strategies
+- Preparing for advanced monitoring and logging topics
+
+---
+
 ### 📅 Ready for Next Topic
 **Status:** 🚀 Ready for Next Learning Session  
-**Current Progress:** Git ✅ Complete | Linux/Unix ✅ Complete | Docker ✅ Complete | CI/CD ✅ Complete | IaC ⚡ In Progress
+**Current Progress:** Git ✅ Complete | Linux/Unix ✅ Complete | Docker ✅ Complete | CI/CD ✅ Complete | IaC ✅ Complete | Config Mgmt ⚡ In Progress
 
 ---
 
